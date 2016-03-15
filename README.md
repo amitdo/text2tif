@@ -5,7 +5,7 @@ text2tif is a fork of [Tesseract](https://github.com/tesseract-ocr/tesseract)'s 
 text2tif takes a text file as an input and generates a TIFF image and a *.box  file which contains bounding box coordinates for each glyph in the image.
 
 
-##Compilng
+##Compiling
 
 ```
 g++ -o text2tif \
