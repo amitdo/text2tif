@@ -35,9 +35,10 @@ g++ -o text2tif \
 ./ccutil/unichar.cpp \
 ./ccutil/unicharmap.cpp \
 ./ccutil/unicharset.cpp \
--lm -pthread -llept -licui18n -licuuc \
+-lm -pthread -llept \
 -I/usr/local/include/leptonica \
 -I./training -I./ccutil \
+`pkg-config --cflags --libs icu-i18n` \
 `pkg-config --cflags --libs pango` \
 `pkg-config --cflags --libs cairo` \
 `pkg-config --cflags --libs pangocairo` \
