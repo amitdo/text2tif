@@ -13,6 +13,7 @@ g++ -o text2tif \
 -g -Wall -Wno-uninitialized -O0 -DDEBUG \
 -DUSE_STD_NAMESPACE \
 -DPANGO_ENABLE_ENGINE \
+./port/strcasestr.cpp \
 ./training/boxchar.cpp \
 ./training/commandlineflags.cpp \
 ./training/degradeimage.cpp \
@@ -37,6 +38,7 @@ g++ -o text2tif \
 ./ccutil/unicharset.cpp \
 -lm -pthread -llept \
 -I/usr/local/include/leptonica \
+-I./port \
 -I./training -I./ccutil \
 `pkg-config --cflags --libs icu-i18n` \
 `pkg-config --cflags --libs pango` \
