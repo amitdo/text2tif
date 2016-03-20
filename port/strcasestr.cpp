@@ -57,7 +57,7 @@ https://git.enlightenment.org/core/efl.git/tree/src/lib/evil/evil_string.c?h=v1.
 #include <string.h>
 #include <ctype.h>
 
-#include "evil_string.h"
+#include "strcasestr.h"
 
 char *strcasestr(const char *haystack, const char *needle)
 {
