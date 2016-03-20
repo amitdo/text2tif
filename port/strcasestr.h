@@ -57,18 +57,6 @@ https://git.enlightenment.org/core/efl.git/tree/src/lib/evil/evil_string.h?h=v1.
 
 
 /**
- * @file evil_string.h
- * @brief The file that provides functions ported from Unix in string.h.
- * @defgroup Evil_String_Group String.h functions.
- * @ingroup Evil
- *
- * This header provides functions ported from Unix in string.h.
- *
- *
- */
-
-
-/**
  * @brief Locate a substring into a string, ignoring case.
  *
  * @param haystack The string to search in.
@@ -84,7 +72,6 @@ https://git.enlightenment.org/core/efl.git/tree/src/lib/evil/evil_string.h?h=v1.
  *
  * Supported OS: Windows XP.
  */
-EAPI char *strcasestr(const char *haystack, const char *needle);
+char *strcasestr(const char *haystack, const char *needle);
 
-#endif  /* _PORT_STRCASESTR_H_ */
-#endif /* __EVIL_STRING_H__ */
+#endif  /* __PORT_STRCASESTR_H__ */
