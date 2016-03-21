@@ -10,7 +10,7 @@ text2tif takes a text file as an input and generates a TIFF image and a *.box  f
 ```
 g++ -o text2tif \
 -std=c++11 \
--g -Wall -Wno-uninitialized -O0 -DDEBUG \
+-g -Wall -Wno-sign-compare -Wno-uninitialized -O0 -DDEBUG \
 -DUSE_STD_NAMESPACE \
 -DPANGO_ENABLE_ENGINE \
 ./port/strcasestr.cpp \
