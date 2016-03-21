@@ -52,6 +52,7 @@ Source:
 https://git.enlightenment.org/core/efl.git/tree/src/lib/evil/evil_string.c?h=v1.16.1
 */
 
+#if defined(_WIN32) && !defined(__CYGWIN__)
 
 #include <stdlib.h>
 #include <string.h>
@@ -94,3 +95,4 @@ char *strcasestr(const char *haystack, const char *needle)
 
    return NULL;
 }
+#endif // defined(_WIN32) && !defined(__CYGWIN__)

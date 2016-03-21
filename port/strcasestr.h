@@ -55,6 +55,7 @@ https://git.enlightenment.org/core/efl.git/tree/src/lib/evil/evil_string.h?h=v1.
 #ifndef __PORT_STRCASESTR_H__
 #define __PORT_STRCASESTR_H__
 
+#if defined(_WIN32) && !defined(__CYGWIN__)
 
 /**
  * @brief Locate a substring into a string, ignoring case.
@@ -74,4 +75,6 @@ https://git.enlightenment.org/core/efl.git/tree/src/lib/evil/evil_string.h?h=v1.
  */
 char *strcasestr(const char *haystack, const char *needle);
 
-#endif  /* __PORT_STRCASESTR_H__ */
+#endif // defined(_WIN32) && !defined(__CYGWIN__)
+
+#endif  // __PORT_STRCASESTR_H__
