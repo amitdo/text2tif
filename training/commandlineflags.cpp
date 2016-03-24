@@ -158,7 +158,8 @@ void ParseCommandLineFlags(const char* usage,
     }
     // If this is asking for usage, print the help message and abort.
     if (!strcmp(current_arg, "help") ||
-        !strcmp(current_arg, "helpshort")) {
+        !strcmp(current_arg, "helpshort") ||
+        (*argc == 1)) {
       tprintf("USAGE: %s\n", usage);
       PrintCommandLineFlags();
       exit(0);
