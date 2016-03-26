@@ -58,15 +58,15 @@ set_lang_specific_parameters ${LANG_CODE}
 initialize_fontconfig
 
 phase_I_generate_image 8
-phase_UP_generate_unicharset
-phase_D_generate_dawg
-phase_E_extract_features "box.train" 8
-phase_C_cluster_prototypes "${TRAINING_DIR}/${LANG_CODE}.normproto"
-if [[ "${ENABLE_SHAPE_CLUSTERING}" == "y" ]]; then
-    phase_S_cluster_shapes
-fi
-phase_M_cluster_microfeatures
-phase_B_generate_ambiguities
-make__traineddata
+#phase_UP_generate_unicharset
+#phase_D_generate_dawg
+#phase_E_extract_features "box.train" 8
+#phase_C_cluster_prototypes "${TRAINING_DIR}/${LANG_CODE}.normproto"
+#if [[ "${ENABLE_SHAPE_CLUSTERING}" == "y" ]]; then
+#    phase_S_cluster_shapes
+#fi
+#phase_M_cluster_microfeatures
+#phase_B_generate_ambiguities
+#make__traineddata
 
 tlog "\nCompleted training for language '${LANG_CODE}'\n"
