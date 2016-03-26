@@ -48,7 +48,13 @@
 #include "pango/pangocairo.h"
 #include "pango/pangofc-font.h"
 
-STRING_PARAM_FLAG(fonts_dir, "/auto/ocr-data/tesstraining/fonts",
+#ifdef GOOGLE_ENV
+const char* kDefaultFontsPath = "/auto/ocr-data/tesstraining/fonts";
+#else
+const char* kDefaultFontsPath = "";
+#endif
+
+STRING_PARAM_FLAG(fonts_dir, kDefaultFontsPath,
                   "Overrides system default font location");
 STRING_PARAM_FLAG(fontconfig_tmpdir, "/tmp",
                   "Overrides fontconfig default temporary dir");
