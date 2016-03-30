@@ -426,10 +426,7 @@ bool PangoFontInfo::CanRenderString(const char* utf8_word, int len,
       tlog(2, "Found end of line NULL run marker\n");
       continue;
     }
-    PangoGlyph dotted_circle_glyph;
     PangoFont* font = run->item->analysis.font;
-    dotted_circle_glyph = pango_fc_font_get_glyph(
-        reinterpret_cast<PangoFcFont*>(font), kDottedCircleGlyph);
     if (TLOG_IS_ON(2)) {
       PangoFontDescription* desc = pango_font_describe(font);
       char* desc_str = pango_font_description_to_string(desc);
@@ -437,6 +434,12 @@ bool PangoFontInfo::CanRenderString(const char* utf8_word, int len,
       g_free(desc_str);
       pango_font_description_free(desc);
     }
+
+    //PangoFcFont* fc_font = reinterpret_cast<PangoFcFont*>(font);
+    PangoFcFont* fc_font = PANGO_FC_FONT(font);
+    PangoGlyph dotted_circle_glyph;
+    dotted_circle_glyph = pango_fc_font_get_glyph(
+       fc_font, kDottedCircleGlyph);
 
     PangoGlyphItemIter cluster_iter;
     gboolean have_cluster;
