@@ -416,13 +416,12 @@ int main(int argc, char** argv) {
 
   if (FLAGS_list_available_fonts) {
     const vector<string>& all_fonts = FontUtils::ListAvailableFonts();
-    int i;
-    for (i = 0; i < all_fonts.size(); i++) {
-      tprintf("%s\n", all_fonts[i].c_str());
+    for (int i = 0; i < all_fonts.size(); i++) {
+      printf("%s\n", all_fonts[i].c_str());
       ASSERT_HOST_MSG(FontUtils::IsAvailableFont(all_fonts[i].c_str()),
                       "Font %s is unrecognized.\n", all_fonts[i].c_str());
     }
-    tprintf("=== Total: %3d fonts ===\n", i); 
+    tprintf("=== Total: %3d fonts ===\n", all_fonts.size()); 
     return EXIT_SUCCESS;
   }
 
