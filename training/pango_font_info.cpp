@@ -435,13 +435,12 @@ bool PangoFontInfo::CanRenderString(const char* utf8_word, int len,
       pango_font_description_free(desc);
     }
 
-    //PangoFcFont* fc_font = reinterpret_cast<PangoFcFont*>(font);
-    PangoFcFont* fc_font = PANGO_FC_FONT(font);
     PangoGlyph dotted_circle_glyph;
   // Workaround to prevent crash
   #if defined(__MINGW32__) || defined(__APPLE__)
     dotted_circle_glyph = 0;
-  #else  // On Linux / BSD / Cygwin system 
+  #else  // On Linux / BSD / Cygwin system
+    PangoFcFont* fc_font = PANGO_FC_FONT(font);
     dotted_circle_glyph = pango_fc_font_get_glyph(
        fc_font, kDottedCircleGlyph);
   #endif
