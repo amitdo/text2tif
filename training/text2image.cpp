@@ -442,10 +442,12 @@ int main(int argc, char** argv) {
   if (!FLAGS_find_fonts && !FontUtils::IsAvailableFont(FLAGS_font.c_str())) {
     string pango_name;
     if (!FontUtils::IsAvailableFont(FLAGS_font.c_str(), &pango_name)) {
-      tprintf("Could not find font named %s. Pango suggested font %s\n"
-              "Please correct '--font' arg.\n",
-              FLAGS_font.c_str(), pango_name.c_str());
-              exit(EXIT_FAILURE);
+      tprintf("Could not find font named %s.\n", FLAGS_font.c_str());
+      if (!pango_name.empty()) {
+        tprintf("Pango suggested font %s\n", pango_name.c_str());
+      }
+      tprintf("Please correct '--font' arg.\n");
+      exit(EXIT_FAILURE);
     }
   }
 
